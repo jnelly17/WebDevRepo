@@ -289,9 +289,19 @@ app.post('/postListing', async (req, res) => {
     }
   })
 
-  app.get('/logout', (req, res) => {
+app.get('/logout', (req, res) => {
     authenticatedCo = false;
     authenticatedStud = false;
     loggedCompanyIdentifier = null;
     res.redirect('/');
-  });
+});
+
+app.post('/deleteJob/:id', (req, res) => {
+    console.log('here is that deletion shnizzle bruv')
+    knex('Jobs').where('JobID', req.params.id).del().then(() => {
+        res.redirect('/companyview2');
+    }).catch(error => {
+        console.error('Error deleting job:', error);
+        res.status(500).send('Internal Server Error');
+    });
+});
