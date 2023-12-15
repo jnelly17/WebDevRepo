@@ -2,6 +2,7 @@
 Created by Seth Alley, Sawyer Evans, Jake Nelson, and, last but not least, Adam Kelley
 Most recently updated: Dec 11, 2023
 Section 4, Group 3 | Made for IS 403
+This is our styling page. it makes things pretty. 
 
 * Start Bootstrap - Stylish Portfolio v6.0.6 (https://startbootstrap.com/theme/stylish-portfolio)
 * Copyright 2013-2023 Start Bootstrap

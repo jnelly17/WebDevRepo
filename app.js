@@ -1,6 +1,8 @@
 //Created by Sawyer Evans, Seth Alley, Jake Nelson, and, last but not least, Adam Kelley
 //Most recently updated: Dec 14, 2023
 //Section 4, Group 3 | Made for IS 403
+//this is our main functionality page. it links all of the other pages, 
+//and does a whole bunch of other stuff. 
 const express = require('express');
 const app = express();
 const path = require('path');
