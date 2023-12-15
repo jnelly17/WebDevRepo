@@ -196,8 +196,10 @@ app.get('/studentreg', (req, res) => {
     if (authenticatedCo == false && authenticatedStud == false){
         res.render('studentreg')
     } else if (authenticatedCo == false && authenticatedStud == true){
+        alert("You have already logged in to a student account. You are being redirected. Please log out before attempting this action")
         res.redirect('studview')
     } else if (authenticatedCo == true && authenticatedStud == false){
+        alert("You have already logged in to a company account. You are being redirected. Please log out before attempting this action")
         res.redirect('companyview1')
     }
 })
