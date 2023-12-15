@@ -243,7 +243,7 @@ app.get('/companyview2', async (req, res) => {
         if (authenticatedCo) {
             console.log('here is the comp id', loggedCompanyIdentifier);
             const Jobs = await knex
-                .select('Jobs.JobName', 'Jobs.JobDescription', 'Jobs.Deadline', 'Jobs.Completed')
+                .select('Jobs.JobName', 'Jobs.JobDescription', 'Jobs.Deadline', 'Jobs.Completed', 'JobID')
                 .from('Jobs')
                 .innerJoin('Companies', 'Jobs.CompanyID', 'Companies.CompanyID')
                 .where('Jobs.CompanyID', loggedCompanyIdentifier['CompanyID']);
@@ -296,12 +296,35 @@ app.get('/logout', (req, res) => {
     res.redirect('/');
 });
 
-app.post('/deleteJob/:id', (req, res) => {
-    console.log('here is that deletion shnizzle bruv')
-    knex('Jobs').where('JobID', req.params.id).del().then(() => {
+app.post('/deleteJob', (req, res) => {
+    console.log('here is that deletion thing')
+    console.log('the job id is....', req.body.JobID)
+    knex('Jobs').where('JobID', req.body.JobID).del().then(() => {
         res.redirect('/companyview2');
     }).catch(error => {
         console.error('Error deleting job:', error);
         res.status(500).send('Internal Server Error');
     });
 });
+
+
+app.get('/editJob', (req, res) => {
+    knex.select('JobID', 'JobName', 'JobDescription', 'Deadline', 'Completed').from('Jobs').where('JobID', req.query.JobID2)
+    .then(Jobs => {
+        res.render('editJobs', {Jobs: Jobs});
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({err});
+    });
+});
+
+app.post('/editJob', (req, res) => {
+    knex('Jobs').where("JobID", req.body.JobID2).update({
+        JobName: req.body.JobName,
+        JobDescription: req.body.JobDescription,
+        Deadline: req.body.Deadline,
+        Completed: req.body.Completed
+    }).then(Jobs => {
+        res.redirect('companyview1');
+    })
+})
