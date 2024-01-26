@@ -146,8 +146,20 @@ app.get('/coLogin', async (req, res) => {
         };
 
         // then she inserts the survey into the database
-        const insertedStud = await knex("Students").insert(studData).returning("*");
-
+        const insertedStud = await knex("Students")
+        .insert({
+          StudFirstName: req.body.fName,
+          StudLastName: req.body.lName,
+          Linkedin: req.body.linkedin,
+          Github: req.body.github,
+          StudDescription: req.body.desc,
+          StudSchool: req.body.school,
+          StudPhone: req.body.phone,
+          StudEmail: req.body.email,
+          StudPassword: req.body.password
+        })
+        .returning("*");
+      
         // Log the inserted survey data to make sure that it is right
         console.log("DB updated successfully:", insertedStud);
         res.redirect('studentlogin')
