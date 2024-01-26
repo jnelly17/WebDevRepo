@@ -1,3 +1,9 @@
+<!--Created by Sawyer Evans, Seth Alley, Jake Nelson, and, last but not least, Adam Kelley
+Most recently updated: Dec 14, 2023
+Section 4, Group 3 | Made for IS 403
+
+this is a view for companies to see students who could potentially help them with their work, as well as those students contact info. 
+-->
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -37,18 +43,18 @@
                 </div>
             </div>
         </section>
-
+        <!--Dynamically displayed content(all students)-->
         <h1>Students that are available to build projects for your needs!</h1><br>
         <br>
         <% for (let iCount = 0; iCount < Students.length; iCount++) { %>
             <fieldset id="compDisplay"><h2><%= Students[iCount].StudLastName %>, <%= Students[iCount].StudFirstName %></h2>
                 <ul>
                     <li><p>School name:</p><%= Students[iCount].StudSchool %></li>
-                    <li><p>Linkedin Profile:</p><%= Students[iCount].Linkedin %></li>
-                    <li><p>Github Repository:</p><%= Students[iCount].Github %></li>
+                    <li><p>Linkedin Profile:</p><a href="https://www.linkedin.com/in/<%= Students[iCount].Linkedin %>">Linkedin</a></li>
+                    <li><p>Github Repository:</p><a href="https://github.com/<%= Students[iCount].Github %>">Github</a></li>
                     <li><p>Description of Skills:</p><%= Students[iCount].StudDescription %></li>
-                    <li><p>Phone #:</p><%= Students[iCount].StudPhone %></li>
-                    <li><p>Email:</p><%= Students[iCount].StudEmail %></li>
+                    <li><p>Phone #:</p><a href="tel:<%= Students[iCount].StudPhone %>"><%= Students[iCount].StudPhone %></a></li>
+                    <li><p>Email:</p><a href="mailto:<%= Students[iCount].StudEmail %>"><%= Students[iCount].StudEmail %></a></li>
                 </ul>
             </fieldset>
         <% } %>
@@ -60,7 +66,7 @@
         <footer class="footer text-center">
             <div class="container px-4 px-lg-5">
                 <ul class="list-inline mb-5">
-                    <li class="list-inline-item">
+                <!--    <li class="list-inline-item">
                         <a class="social-link rounded-circle text-white mr-3" href="#!"><i class="icon-social-facebook"></i></a>
                     </li>
                     <li class="list-inline-item">
@@ -68,7 +74,7 @@
                     </li>
                     <li class="list-inline-item">
                         <a class="social-link rounded-circle text-white" href="#!"><i class="icon-social-github"></i></a>
-                    </li>
+                    </li>-->
                 </ul>
                 <p class="text-muted small mb-0">Copyright &copy; WebDevConnect 2023</p>
             </div>
