@@ -4258,7 +4258,7 @@ textarea.form-control-lg {
 }
 
 .card-subtitle {
-  margin-top: calc(-1.5 * var(--bs-card-title-spacer-y));
+  margin-top: calc(-0.5 * var(--bs-card-title-spacer-y));
   margin-bottom: 0;
 }
 
