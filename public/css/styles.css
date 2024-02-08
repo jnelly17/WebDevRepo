@@ -11001,10 +11001,9 @@ html {
 }
 
 .btn-xl {
-  padding: 3rem;
-  height:100px; 
-  width: auto;
+  padding: 1.25rem 2.5rem;
 }
+
 
 .callout {
   padding: 15rem 0;
