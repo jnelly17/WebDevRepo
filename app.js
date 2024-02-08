@@ -51,6 +51,11 @@ app.get('/studentlogin', (req, res) => {
     }
 })
 
+//route for the privacy policy
+app.get('/privacy', (req, res) => {
+    res.render('privacy')
+})
+
 //Route to company login page
 app.get('/companylogin', (req, res) => {
     if (authenticatedCo == false && authenticatedStud == false){
