@@ -215,6 +215,28 @@ app.get('/studentreg', (req, res) => {
 })
 
 
+//route for general login page
+app.get('/generalLogin', (req, res) => {
+    if (authenticatedCo == false && authenticatedStud == false){
+        res.render('/generalLogin')
+    } else if (authenticatedCo == false && authenticatedStud == true){
+        res.redirect('studview')
+    } else if (authenticatedCo == true && authenticatedStud == false){
+        res.redirect('companyview1')
+    }
+})
+
+//route foer general registration page
+app.get('/generalRegister', (req, res) => {
+    if (authenticatedCo == false && authenticatedStud == false){
+        res.render('/generalRegister')
+    } else if (authenticatedCo == false && authenticatedStud == true){
+        res.redirect('studview')
+    } else if (authenticatedCo == true && authenticatedStud == false){
+        res.redirect('companyview1')
+    }
+})
+
 //route to company registration page
 app.get('/companyreg', (req, res) => {
     if (authenticatedCo == false && authenticatedStud == false){
