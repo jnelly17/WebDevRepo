@@ -45,7 +45,7 @@ this is a view for students to see what companes they can do projects for.
         <h1>Projects that are ready for you to get started!</h1><br>
         <br>
         <% for (let iCount = 0; iCount < jobs.length; iCount++) { %>
-            <fieldset id="compDisplay"><h2><%= jobs[iCount].JobName %></h2>
+            <!--<fieldset id="compDisplay"><h2><%= jobs[iCount].JobName %></h2>
                 <ul>
                     <li><p>Company Name:</p><%= jobs[iCount].CompName %></li>
                     <li><p>Job Description:</p><%= jobs[iCount].JobDescription %></li>
@@ -53,7 +53,70 @@ this is a view for students to see what companes they can do projects for.
                     <li><p>Company Phone:</p><%= jobs[iCount].CompPhone %></li>
                     <li><p>Company Email:</p><%= jobs[iCount].CompEmail %></li>
                 </ul>
+            </fieldset>-->
+            <fieldset id="compDisplay">
+                <h2><%= jobs[iCount].JobName %></h2>
+                <ul>
+                    <li>
+                        <p>Company Name:</p>
+                        <!-- Content for Company Name goes here -->
+                        <%= jobs[iCount].CompName %>
+                    </li>
+                    <li>
+                        <p>Company Phone:</p>
+                        <!-- Content for Company Phone goes here -->
+                        <%= jobs[iCount].CompPhone %>
+                    </li>
+                    <li>
+                        <p>Company Email:</p>
+                        <!-- Content for Company Email goes here -->
+                        <%= jobs[iCount].CompEmail %>
+                    </li>
+                    <li>
+                        <p>Deadline:</p>
+                        <!-- Content for Deadline goes here -->
+                        <%= jobs[iCount].Deadline %>
+                    </li>
+                    <li>
+                        <p>Job Description:</p>
+                        <!-- Content for Job Description goes here -->
+                        <%= jobs[iCount].JobDescription %>
+                    </li>
+                </ul>
+                <!-- Larger fieldset for Job Description goes here -->
             </fieldset>
+            <style>
+                #compDisplay {
+                    display: flex;
+                    flex-direction: row;
+                }
+        
+                #compDisplay h2 {
+                    text-align: center;
+                    width: 50%; /* Adjust as needed */
+                }
+        
+                #compDisplay ul {
+                    list-style-type: none;
+                    padding: 0;
+                    width: 50%; /* Adjust as needed */
+                }
+        
+                #compDisplay ul li {
+                    border: 1px solid #ccc;
+                    margin-bottom: 10px;
+                    padding: 10px;
+                }
+        
+                #compDisplay ul li p {
+                    margin: 0;
+                }
+        
+                #compDisplay ul li:nth-child(even) {
+                    background-color: #f9f9f9; /* Optional: Alternate background color */
+                }
+            </style>
+            
         <% } %>
 
 
