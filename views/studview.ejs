@@ -54,7 +54,7 @@ this is a view for students to see what companes they can do projects for.
                     <li><p>Company Email:</p><%= jobs[iCount].CompEmail %></li>
                 </ul>
             </fieldset>-->
-            <fieldset id="compDisplay">
+            <fieldset id="organizeDisplay">
                 <h2><%= jobs[iCount].JobName %></h2>
                 <ul>
                     <li>
@@ -86,33 +86,33 @@ this is a view for students to see what companes they can do projects for.
                 <!-- Larger fieldset for Job Description goes here -->
             </fieldset>
             <style>
-                #compDisplay {
+                #oraganizeDisplay {
                     display: flex;
                     flex-direction: row;
                 }
         
-                #compDisplay h2 {
+                #organizeDisplay h2 {
                     text-align: center;
                     width: 50%; /* Adjust as needed */
                 }
         
-                #compDisplay ul {
+                #organizeDisplay ul {
                     list-style-type: none;
                     padding: 0;
                     width: 50%; /* Adjust as needed */
                 }
         
-                #compDisplay ul li {
+                #organizeDisplay ul li {
                     border: 1px solid #ccc;
                     margin-bottom: 10px;
                     padding: 10px;
                 }
         
-                #compDisplay ul li p {
+                #organizeDisplay ul li p {
                     margin: 0;
                 }
         
-                #compDisplay ul li:nth-child(even) {
+                #organizeDisplay ul li:nth-child(even) {
                     background-color: #f9f9f9; /* Optional: Alternate background color */
                 }
             </style>
