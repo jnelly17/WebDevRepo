@@ -56,65 +56,84 @@ this is a view for students to see what companes they can do projects for.
             </fieldset>-->
             <fieldset id="organizeDisplay">
                 <h2><%= jobs[iCount].JobName %></h2>
-                <ul>
-                    <li>
-                        <p>Company Name:</p>
-                        <!-- Content for Company Name goes here -->
-                        <%= jobs[iCount].CompName %>
-                    </li>
-                    <li>
-                        <p>Company Phone:</p>
-                        <!-- Content for Company Phone goes here -->
-                        <%= jobs[iCount].CompPhone %>
-                    </li>
-                    <li>
-                        <p>Company Email:</p>
-                        <!-- Content for Company Email goes here -->
-                        <%= jobs[iCount].CompEmail %>
-                    </li>
-                    <li>
-                        <p>Deadline:</p>
-                        <!-- Content for Deadline goes here -->
-                        <%= jobs[iCount].Deadline %>
-                    </li>
-                    <li>
-                        <p>Job Description:</p>
-                        <!-- Content for Job Description goes here -->
+                <div class="content">
+                    <div class="info">
+                        <ul>
+                            <li>
+                                <strong>Company Name:</strong><br>
+                                <%= jobs[iCount].CompName %>
+                            </li>
+                            <li>
+                                <strong>Company Phone:</strong><br>
+                                <%= jobs[iCount].CompPhone %>
+                            </li>
+                            <li>
+                                <strong>Company Email:</strong><br>
+                                <%= jobs[iCount].CompEmail %>
+                            </li>
+                            <li>
+                                <strong>Deadline:</strong><br>
+                                <%= jobs[iCount].Deadline %>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="job-description">
+                        <strong>Job Description:</strong><br><br>
                         <%= jobs[iCount].JobDescription %>
-                    </li>
-                </ul>
-                <!-- Larger fieldset for Job Description goes here -->
+                    </div>
+                </div>
             </fieldset>
+            
             <style>
-                #oraganizeDisplay {
+                #organizeDisplay {
+                    text-align: center;
+                }
+
+                #organizeDisplay h2 {
+                    margin-top: 0; /* Remove default margin */
+                }
+
+                #organizeDisplay .content {
                     display: flex;
                     flex-direction: row;
+                    justify-content: center; /* Center content horizontally */
                 }
-        
-                #organizeDisplay h2 {
-                    text-align: center;
-                    width: 50%; /* Adjust as needed */
+
+                #organizeDisplay .info {
+                    width: 25%; /* Adjust as needed */
                 }
-        
+
+                #organizeDisplay .job-description {
+                    width: 75%; /* Adjust as needed */
+                    padding-left: 20px;
+                    border: 1px solid #ccc;
+                    margin-left: 3%;/* Add some padding to separate it from other content */
+                    box-sizing: border-box; /* Include padding in the width calculation */
+                    text-align:left;
+                    background-color: #e4e4e4; /* Optional: Alternate background color */
+
+                }
+
                 #organizeDisplay ul {
                     list-style-type: none;
                     padding: 0;
-                    width: 50%; /* Adjust as needed */
                 }
-        
+
                 #organizeDisplay ul li {
                     border: 1px solid #ccc;
                     margin-bottom: 10px;
                     padding: 10px;
+                    text-align:left;
                 }
-        
+
                 #organizeDisplay ul li p {
                     margin: 0;
                 }
-        
-                #organizeDisplay ul li:nth-child(even) {
-                    background-color: #f9f9f9; /* Optional: Alternate background color */
+
+                #organizeDisplay ul li {
+                    background-color: #e4e4e4; /* Optional: Alternate background color */
                 }
+
             </style>
             
         <% } %>
